@@ -1,4 +1,6 @@
+import 'package:bulk_finder/layout/app_layout.dart';
 import 'package:bulk_finder/pages/auth/login.dart';
+import 'package:bulk_finder/pages/auth/register.dart';
 import 'package:bulk_finder/pages/auth/splash_screen.dart';
 import 'package:bulk_finder/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +19,9 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/': (context) => AppLayout(child: const SplashScreen()),
+        '/login': (context) => AppLayout(child: const LoginScreen()),
+        '/register': (context) => AppLayout(child: const RegisterScreen()),
       },
     );
   }

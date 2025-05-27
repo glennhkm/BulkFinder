@@ -9,6 +9,6 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(seedColor: brand_01),
     useMaterial3: true,
     textTheme: GoogleFonts.poppinsTextTheme(),
-    scaffoldBackgroundColor: Color(0xFFF6FFED),
+    scaffoldBackgroundColor: Colors.white,
   );
 }

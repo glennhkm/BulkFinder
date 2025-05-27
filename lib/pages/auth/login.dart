@@ -55,9 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 10,
-                        offset: const Offset(0, -5),
+                        color: AppTheme.brand_01.withOpacity(0.8),
+                        blurRadius: 16,
+                        offset: const Offset(0, -8),
                       ),
                     ],
                   ),
@@ -131,24 +131,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         backgroundColor: AppTheme.brand_02,
                       ),
                       const SizedBox(height: 22),
-                      RichText(
-                        text: TextSpan(
-                          text: "Sudah punya akun? ",
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            fontFamily: GoogleFonts.poppins().fontFamily,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: "Daftar",
-                              style: TextStyle(
-                                color: AppTheme.brand_02,
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/register');
+                        },
+                        child: RichText(
+                          text: TextSpan(
+                            text: "Belum punya akun? ",
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                              fontFamily: GoogleFonts.poppins().fontFamily,
                             ),
-                          ],
+                            children: [
+                              TextSpan(
+                                text: "Daftar",
+                                style: TextStyle(
+                                  color: AppTheme.brand_02,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
