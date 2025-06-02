@@ -28,5 +28,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to show nearby stores on the map.</string>
 </dict>
 </plist>

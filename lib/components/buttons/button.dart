@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color backgroundColor;
   final Color textColor;
   final double elevation;
@@ -44,7 +44,7 @@ class Button extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
+          backgroundColor: onPressed != null ? backgroundColor : backgroundColor.withOpacity(0.6),
           elevation: elevation,
           padding: const EdgeInsets.symmetric(vertical: 21),
           shape: RoundedRectangleBorder(
