@@ -38,10 +38,17 @@ void main() async {
     print('Using hardcoded Supabase configuration');
   }
 
+  final supabaseUrl = dotenv.env['SUPABASE_URL'];
+  final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY'];
+
+  if (supabaseUrl == null || supabaseAnonKey == null) {
+    throw Exception('SUPABASE_URL or SUPABASE_ANON_KEY not found in .env file');
+  }
+
   try {
     await Supabase.initialize(
-      url: dotenv.env['SUPABASE_URL'] ?? 'https://elrssdcbxjmhnxatbrss.supabase.co',
-      anonKey: dotenv.env['SUPABASE_ANON_KEY'] ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVscnNzZGNieGptaG54YXRicnNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0MzYyNTgsImV4cCI6MjA2NDAxMjI1OH0.a3UNRr-_FZ5cDNNCzU7K6TGbz3jl4sVOO2-Qy5WJADQ',
+      url: supabaseUrl,
+      anonKey: supabaseAnonKey,
     );
     print('Supabase initialized successfully');
   } catch (e) {
